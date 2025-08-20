@@ -1,3 +1,5 @@
+import * as readlineSync from 'readline-sync';
+
 function add(a: number, b: number): number {
     return a + b;
 }
@@ -43,4 +45,10 @@ function calculate(opSymbol: string, a: number, b: number): number {
     } else if (op.symbol === '/') {
         return divide(a, b);
     }
+
 }
+const a:number = readlineSync.questionInt('Enter first number a: ');
+const b:number = readlineSync.questionInt('Enter second number b: ');
+const opSymbol:string = readlineSync.question('Enter operation symbol: ');
+const result:number = calculate(opSymbol, a, b);
+console.log(`Result: ${result}`);
